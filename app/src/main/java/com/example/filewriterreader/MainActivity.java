@@ -3,6 +3,7 @@ package com.example.filewriterreader;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public void saveText(View view) {
         FileOutputStream fos = null;
         try {
-            EditText textBox = (EditText) view.findViewById(R.id.editor);
+            EditText textBox = (EditText) findViewById(R.id.editor);
             String text = textBox.getText().toString();
 
             fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openText(View view) {
         FileInputStream fin = null;
-        TextView textView = (TextView) view.findViewById(R.id.text);
+        TextView textView = (TextView) findViewById(R.id.text);
 
         try {
             fin = openFileInput(FILE_NAME);
